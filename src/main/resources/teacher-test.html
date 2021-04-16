@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        #title {
+            font-family: Open Sans;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 15px;
+            line-height: 20px;
+            text-align: center;
+            text-transform: uppercase;
+            color: #000000;
+        }
+
+        .rectangle {
+            min-height: 40px;
+            border: 2px solid #000000;
+            box-sizing: border-box;
+            border-radius: 10px;
+            padding: 4px 20px;
+            margin-top: 12px;
+            text-transform: uppercase;
+            text-align: initial;
+            width: 100%;
+        }
+
+        .rectangle-content {
+            font-family: Open Sans;
+            font-style: normal;
+            /*font-weight: 600;*/
+            font-size: 10px;
+            line-height: 22px;
+            text-transform: uppercase;
+            text-align: initial;
+            float: left;
+            color: #000000;
+        }
+
+        .instruction {
+            font-family: Open Sans;
+            font-style: italic;
+            font-weight: normal;
+            font-size: 10px;
+            line-height: 14px;
+            text-align: center;
+            color: #000000;
+        }
+
+        .optional-instructions {
+            align-items: center;
+            width: 100%;
+        }
+
+           .check {
+               content: "\2713";
+           }
+
+        .test-content {
+            align-items: start;
+            width: 100%;
+            border: 2px solid #000000;
+            box-sizing: border-box;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+    </style>
+    <title>Title</title>
+</head>
+<body>
+<div class="hello">
+
+    <div id="test" style="width: 100%; text-align: center;">
+        <span id="title">Ficha de Acompanhamento </span>
+
+        <!--        #if($TOP_LEFT_DATAS == true)-->
+        <div class="rectangle" >
+
+            <!--            #if($HAS_TEACHER == true)-->
+
+            <div class="rectangle-content" style="width:30%;">
+                <span>Professor:</span>
+            </div>
+            <!--            #end-->
+
+            <!--            #if($HAS_CLASS_NAME == true)-->
+            <div class="rectangle-content" style="width:30%;">Escola:</div>
+            <!--            #end-->
+
+            <!--            #if($HAS_SCHOOL == true)-->
+            <div class="rectangle-content" style="width:15%;">Turma:</div>
+            <!--            #end-->
+
+            <!--            #if($HAS_DATE == true)-->
+            <div class="rectangle-content" style=" width:19%;">Data de aplicação:</div>
+            <!--            #end-->
+        </div>
+        <!--        #end-->
+
+        <!--        #if($INSTRUCTION_ENABLED == true)-->
+        <div>
+            <table style="align-items: center; width: 100%;">
+                <tr>
+                    <td><span class="instruction">Marque &#10004; em caso de acerto. Ao final, some os acertos.</span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <!--        #end-->
+
+        <!--        #if($INSTRUCTION_ENABLED == true && $CREATE_OPTIONAL_INSTRUCTION == true)-->
+        <div>
+            <table class="optional-instructions">
+                <tr>
+                    <td><span class="instruction">Caso a criança acerte: Marque &#x2714;.</span></td>
+                    <td>|</td>
+                    <td><span class="instruction">Caso a criança erre: deixe em branco. </span></td>
+                    <td>|</td>
+                    <td><span class="instruction">Caso a criança não responda: deixe em branco.</span></td>
+
+
+                </tr>
+            </table>
+        </div>
+        <!--        #end-->
+    </div>
+</div>
+</body>
+</html>
